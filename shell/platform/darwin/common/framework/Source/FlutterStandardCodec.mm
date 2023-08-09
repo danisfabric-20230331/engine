@@ -475,7 +475,8 @@ using namespace flutter;
       return dict;
     }
     default:
-      NSAssert(NO, @"Corrupted standard message");
+      NSString *failureMsg = [NSString stringWithFormat:@"Corrupted standard message: %d, data: %@", type, _data];
+      NSAssert(NO, failureMsg);
   }
 }
 @end
